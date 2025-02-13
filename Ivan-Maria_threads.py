@@ -52,7 +52,7 @@ def download_multiple_images():
     print(f"Sequential download completed in {elapsed_time} miliseconds")
 
 #part C
-def download_images_threaded(folder):
+def download_images_threaded():
     urls = [
         'https://th.bing.com/th/id/OIP.MhwSzfXnBG1MpuuA6IFi-AAAAA?w=218&h=180&c=7&r=0&o=5&pid=1.7',
         'https://th.bing.com/th/id/OIP.m8b7Y9-81Q4UMCBMaFkw2QAAAA?w=198&h=180&c=7&r=0&o=5&pid=1.7',
