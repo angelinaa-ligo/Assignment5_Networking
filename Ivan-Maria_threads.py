@@ -125,3 +125,4 @@ download_multiple_images()
 
 #part C
 print("Part C:")
+download_images_threaded()
