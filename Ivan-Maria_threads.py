@@ -105,9 +105,6 @@ def main():
     parser.add_argument("--folder", default = "Images", help = "Please select a folder to save an images.")
     args = parser.parse_args()
     
-    print(f"DEBUG: Running in {args.mode} mode with folder {args.folder}")  # Debugging message
-    
-    
     if args.mode == "serial":
         download_multiple_images()
     elif args.mode == "threaded":
