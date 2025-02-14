@@ -101,28 +101,31 @@ def download_images_threaded():
 #part D
 def main():
     parser = argparse.ArgumentParser(description = "Download images using threads or sequentially.")
-    parser.add_argument("mode", choices = ["serial", "thread"], help = "Choose (serial) for sequential download or(threaded) for multi-threaded download.")
+    parser.add_argument("mode", choices=["serial", "threaded"], help="Choose (serial) for sequential download or (threaded) for multi-threaded download.")
     parser.add_argument("--folder", default = "Images", help = "Please select a folder to save an images.")
     args = parser.parse_args()
     
+    print(f"DEBUG: Running in {args.mode} mode with folder {args.folder}")  # Debugging message
+    
+    
     if args.mode == "serial":
-        download_multiple_images(args.folder)
+        download_multiple_images()
     elif args.mode == "threaded":
-        download_images_threaded(args.folder)
+        download_images_threaded()
         
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
 
-#part A
-image_url='https://th.bing.com/th/id/OIP.z-dkECmUFma29zYrb27JkwAAAA?w=264&h=180&c=7&r=0&o=5&pid=1.7'
-pathname = r'Images\image_partA.jpg'
-print("Part A:")
-download_file(image_url, pathname)
+# #part A
+# image_url='https://th.bing.com/th/id/OIP.z-dkECmUFma29zYrb27JkwAAAA?w=264&h=180&c=7&r=0&o=5&pid=1.7'
+# pathname = r'Images\image_partA.jpg'
+# print("Part A:")
+# download_file(image_url, pathname)
 
-#part B 
-print("Part B:")
-download_multiple_images()
+# #part B 
+# print("Part B:")
+# download_multiple_images()
 
-#part C
-print("Part C:")
-download_images_threaded()
+# #part C
+# print("Part C:")
+# download_images_threaded()
